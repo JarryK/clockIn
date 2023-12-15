@@ -6,7 +6,7 @@ on:
   # 监听push操作
   push:
     branches:
-      - gh-develop # 推送分支才会触发以下任务
+      - master # 推送分支才会触发以下任务
   pull_request:
 
   # 这个选项可以使你手动在 Action tab 页面触发工作流
