@@ -61,7 +61,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages  # default: gh-pages
+          branch: gh-develop  # default: gh-pages
           folder: dist
           clean: true # Automatically remove deleted files from the deploy branch
           # commit-message: ${{ github.event.head_commit.message }} # default: `Deploying to gh-pages from @ 3238feb 🚀`
