@@ -1,6 +1,7 @@
 {
   "name": "clockin",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "用于打卡记录的项目",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,6 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "dayjs": "^1.11.10",
     "echarts": "^5.4.3",
     "pinia": "^2.1.7",
     "vue": "^3.3.10",
