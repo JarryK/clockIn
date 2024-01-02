@@ -1,13 +1,17 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import * as echarts from 'echarts'
-import clockInfo from '../../data/data.json'
 import dayjs from 'dayjs'
+import {getClickInfo} from '../../api/data.js'
+
+
 let heatMap = ref(null)
 let name = ref('打卡热力图')
 
-const initClockData = ()=>{
-  return clockInfo
+const initClockData = async ()=>{
+  const data = await getClickInfo();
+  console.log(data)
+  return data
 }
 
 const initRange = ()=>{
