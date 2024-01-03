@@ -45,7 +45,6 @@ request.interceptors.request.use(
         if (config.url) {
             config.url = baseUrl + config.url
         }
-        console.log(config);
         return config
     },
     error => {
