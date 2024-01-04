@@ -78,6 +78,7 @@ request.interceptors.request.use(
  * @returns {Promise<unknown>}
  */
 export async function httpRequest(reqUrl, method = 'post', parameter = {}, checkSuccess = true, needLoad = true, headers = {}) {
+    const loadingInstance = needLoad ? 'loading()' : ""
     let requestTime = new Date().getTime()
     let _p = {
         'requestTime': requestTime,
@@ -103,6 +104,9 @@ export async function httpRequest(reqUrl, method = 'post', parameter = {}, check
         data: parameter,
         headers: headers
     }).finally(() => {
+        if (loadingInstance) {
+            
+        }
     })
     if (!checkSuccess) {
         return Promise.resolve(data)

@@ -66,9 +66,10 @@ const appendInfo = async () => {
   await appendClickInfo(time.value)
   alert('提交成功')
   submitFlag.value = false
+  await init()
 }
 
-onMounted(async () => {
+const init = async () => {
   const myChart = echarts.init(heatMap.value)
   myChart.setOption({
     tooltip: {
@@ -115,11 +116,15 @@ onMounted(async () => {
       data: await initClockData()
     }
   })
+}
+
+onMounted(async () => {
+   await init()
 })
 </script>
 
 <template>
-  <div class="box">
+  <div class="box" id="clockInfoBox">
     <p>{{ name }}</p>
     <div ref="heatMap" class="about"></div>
     <div class="infoBox">
